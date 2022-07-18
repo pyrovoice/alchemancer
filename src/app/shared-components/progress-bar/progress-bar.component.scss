@@ -1,0 +1,14 @@
+#progress { 
+    border: 1px solid black;
+    position: relative;
+    padding: 3px;
+}
+
+#percent {
+    position: absolute;   
+    left: 50%;
+}
+
+#bar {
+    height: 20px;
+}
