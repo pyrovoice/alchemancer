@@ -1,9 +1,14 @@
+import { PlayerResource } from './../model/player-resource';
+import { Reward } from './../model/reward';
+import { Resource } from './../model/resource';
 import { Exploration, ExplorationStatus } from './../model/exploration';
 import { Component, OnInit } from '@angular/core';
+import { PlayerInventory } from 'src/model/player-inventory';
 
 enum Scene{
   Fight,
-  Exploration
+  Exploration,
+  Inventory
 }
 @Component({
   selector: 'app-root',
@@ -14,10 +19,11 @@ export class AppComponent implements OnInit{
   currentScene: Scene = Scene.Fight;
   Scene = Scene;
   explorations: Exploration[] = [];
+  playerInventory: PlayerInventory = new PlayerInventory();
 
   ngOnInit(): void {
-    this.explorations.push({id:"testLocked", name:"Locked", displayText:"I'm locked", status: ExplorationStatus.Locked, reward:{resources:[]}})
-    this.explorations.push({id:"testUnlocked", name:"Unlocked", displayText:"I'm Unlocked", status: ExplorationStatus.Unlocked, reward:{resources:[]}})
+    this.explorations.push({id:"testLocked", name:"Locked", displayText:"I'm locked", status: ExplorationStatus.Unlocked, reward:{unlocksResources:[{resourceName:"testResource", nbr:100}], resources:[{resourceName:"testResource", nbr:5}]}})
+    this.explorations.push({id:"testUnlocked", name:"Unlocked", displayText:"I'm Unlocked", status: ExplorationStatus.Unlocked, reward:{resources:[], unlocksResources:[]}})
   }
 
   displayActionsScene(){
@@ -26,5 +32,17 @@ export class AppComponent implements OnInit{
 
   displayFightScene(){
     this.currentScene = Scene.Fight
+  }
+
+  displayInventoryScene(){
+    this.currentScene = Scene.Inventory
+  }
+
+  resolveExploration(event: Exploration){
+    this.manageReward(event.reward);
+  }
+
+  manageReward(reward: Reward){
+    this.playerInventory.unlockResources(reward.unlocksResources);
   }
 }

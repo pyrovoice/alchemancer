@@ -6,6 +6,7 @@ import { SceneFightComponent } from './fighting/scene-fight/scene-fight.componen
 import { CharacterDetailComponent } from './fighting/character-detail/character-detail.component';
 import { ProgressBarComponent } from './shared-components/progress-bar/progress-bar.component';
 import { SceneExplorationComponent } from './exploration/scene-exploration/scene-exploration.component';
+import { SceneInventoryComponent } from './scene-inventory/scene-inventory.component';
 
 @NgModule({
   declarations: [
@@ -13,7 +14,8 @@ import { SceneExplorationComponent } from './exploration/scene-exploration/scene
     SceneFightComponent,
     CharacterDetailComponent,
     ProgressBarComponent,
-    SceneExplorationComponent
+    SceneExplorationComponent,
+    SceneInventoryComponent
   ],
   imports: [
     BrowserModule

@@ -6,9 +6,9 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./progress-bar.component.scss']
 })
 export class ProgressBarComponent implements OnInit {
-  @Input() valueMax!: number;
-  @Input() valueCurrent!: number;
-  @Input() color!: string;
+  @Input() valueMax: number = 1;
+  @Input() valueCurrent: number = 1;
+  @Input() color: string = "blue";
   constructor() { }
 
   ngOnInit(): void {

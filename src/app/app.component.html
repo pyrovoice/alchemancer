@@ -1,4 +1,6 @@
 <app-scene-fight *ngIf="currentScene == Scene.Fight"></app-scene-fight>
-<app-scene-exploration [explorations]="explorations" *ngIf="currentScene == Scene.Exploration"></app-scene-exploration>
+<app-scene-exploration [explorations]="explorations" (explorationEmitter)="resolveExploration($event)" *ngIf="currentScene == Scene.Exploration"></app-scene-exploration>
+<app-scene-inventory *ngIf="currentScene == Scene.Inventory" [inventory]="playerInventory"></app-scene-inventory>
 <button (click)="displayActionsScene()">Explore</button>
 <button (click)="displayFightScene()">Fights</button>
+<button (click)="displayInventoryScene()">Inventory</button>
