@@ -6,5 +6,4 @@ export class ResourceReward{
 export class Reward{
     resources: ResourceReward[] = [];
     unlocksResources: ResourceReward[] = [];
-
 }

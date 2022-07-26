@@ -1,0 +1,36 @@
+
+	[
+		{
+			"name": "Bone",
+			"defaultMaxValue":10,
+			"lootType": "OTHER"
+		},{
+			"name": "Poison",
+			"defaultMaxValue":10,
+			"lootType": "OTHER"
+		},{
+			"name": "Twig",
+			"defaultMaxValue":10,
+			"lootType": "OTHER"
+		},
+		{
+			"name": "Apex rat's tail",
+			"defaultMaxValue":10,
+			"lootType": "OTHER"
+		},
+		{
+			"name": "Rat's Essence",
+			"defaultMaxValue":10,
+			"lootType": "ESSENCE"
+		},
+		{
+			"name": "Spider's Essence",
+			"defaultMaxValue":10,
+			"lootType": "ESSENCE"
+		},
+		{
+			"name": "Undead's Essence",
+			"defaultMaxValue":10,
+			"lootType": "ESSENCE"
+		}
+	]

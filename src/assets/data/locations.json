@@ -1,0 +1,159 @@
+{
+	"locations": [{
+			"name": "Tutorial 1",
+			"maxRoom": 1,
+			"boss": [
+				{
+					"weight": 1,
+					"name": "rat"
+				}
+			],
+			"level": 1,
+			"description": "Another rat, he seems dizzy. Maybe I can steal its essence too?",
+			"firstCompletionReward":{
+				"unlockLocation": "Tutorial 2",
+				"lockLocation": "Tutorial 1",
+				"unlockHeroRecipe": "Ratman",
+				"unlockAdventureIds": ["tutorial2"]
+			},
+			"alterationsToApply":[
+				{
+					"name": "StateAlterationStunned",
+					"alterationAffect": "ALL_ENNEMIES",
+					"baseValue": 5
+				}
+			]
+		},{
+			"name": "Tutorial 2",
+			"maxRoom": 1,
+			"boss": [
+				{
+					"weight": 1,
+					"name": "rat",
+					"number": "3"
+				}
+			],
+			"level": 1,
+			"firstCompletionReward":{
+				"unlockLocation": "Tutorial 3",
+				"lockLocation": "Tutorial 2",
+				"lootRewards":[{"objectName": "Apex rat's tail", "number": 1}]
+			},
+			"description": "They are too many now, I need to create a stronger fighter."
+		},{
+			"name": "Tutorial 3",
+			"maxRoom": 1,
+			"boss": [
+				{
+					"weight": 1,
+					"name": "rat",
+					"number": "3"
+				}
+			],
+			"level": 1,
+			"alterationsToApply":[
+				{
+					"name": "StateAlterationPreventDamageNonEquipped",
+					"alterationAffect": "ALL_ENNEMIES"
+				}
+			],
+			"firstCompletionReward":{
+				"unlockSkill": "Poison Fang",
+				"unlockAdventureIds": ["tutorial3"],
+				"unlockLocation": "Tutorial 4"
+			},
+			"description": "My fighters don't make a dent here. I should use the rat tail I found to craft something for them."
+		},{
+			"name": "Tutorial 4",
+			"maxRoom": 1,
+			"boss": [
+				{
+					"weight": 1,
+					"name": "rat",
+					"number": "3"
+				}
+			],
+			"level": 1,
+			"alterationsToApply":[
+				{
+					"name": "StateAlterationPreventDamageBasicAttack",
+					"alterationAffect": "ALL_ENNEMIES"
+				}
+			],
+			"description": "Simple bites won't cut it. Maybe I can teach a stronger move to my fighters."
+		},{
+			"name": "Tutorial 5",
+			"maxRoom": 1,
+			"boss": [
+				{
+					"weight": 1,
+					"name": "rat",
+					"number": "5"
+				},{
+					"weight": 1,
+					"name": "Apex rat",
+					"number": "1"
+				}
+			],
+			"level": 1,
+			"description": "This is it. Time to reinforce my fighters now that they gathered experience."
+		},
+		{
+			"name": "Granny's cave of Doom and Destruction!",
+			"maxRoom": 5,
+			"boss": [
+				{
+					"name": "Apex rat",
+					"number": 1
+				},
+				{
+					"name": "rat",
+					"number": 5
+				}
+			],
+			"encounters": [
+				{
+					"weight": 8,
+					"name": "rat"
+				},
+				{
+					"weight": 2,
+					"name": "spider"
+				}
+			],
+			"loots": [
+				{
+					"name": "Twig",
+					"chance": 0.1,
+					"quantity": 1
+				}
+			],
+			"completionLoot": [
+				{
+					"name": "Apex rat's tail"
+				}
+			],
+			"level": 1
+		},
+		{
+			"name": "Spooky Cemetary",
+			"encounters": [
+				{
+					"weight": 8,
+					"name": "zombie"
+				},
+				{
+					"weight": 2,
+					"name": "squeleton"
+				}
+			],
+			"loots": [
+				{
+					"name": "bone",
+					"weight": 1
+				}
+			],
+			"level": 5
+		}
+	]
+}

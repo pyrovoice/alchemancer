@@ -1,0 +1,125 @@
+{
+	"AlchemyCreaturesRecipe": [
+		{
+			"race": "rat",
+			"requirements": [{
+				"name": "Rat's Essence",
+				"quantity": 1
+			}]
+		},{
+			"race": "Ratman",
+			"requirements": [{
+				"name": "Rat's Essence",
+				"quantity": 10
+			}]
+		},{
+			"race": "Spiderman",
+			"requirements": [{
+				"name": "Spider's Essence",
+				"quantity": 10
+			}]
+		}
+	],
+	"AlchemyitemsRecipe": [
+	{
+		"name": "Rat ring",
+		"requirements": [{
+			"name": "Rat's essence",
+			"quantity": 10
+		},
+		{
+			"name": "Apex rat's tail",
+			"quantity": 1
+		}]		
+	},{
+		"name": "9 tail Whip",
+		"required": [{
+			"name": "poison",
+			"quantity": 10
+		},
+		{
+			"name": "Apex rat's tail",
+			"quantity": 9
+		}]
+	}],"AlchemySkillRecipe": [
+		{
+			"name": "Poison Fang",
+			"requirements": [{
+				"name": "Poison",
+				"quantity": 5
+			}]	
+		}],
+	"EssenceEffects": [
+	{
+		"name": "Rat's Essence",
+		"EssenceStatModification":[{
+			"stat": "LIFE",
+			"value": 1
+		},{
+			"stat": "ATTACK",
+			"value": -1
+		}]
+	}],
+	"HeroesBaseStats": [{
+		"race": "rat",
+		"BaseStats":[{
+			"stat": "LIFE",
+			"value": 10,
+			"valuePerLevel": 1
+		},{
+			"stat": "ATTACK",
+			"value": 3
+		},{
+			"stat": "SPEED",
+			"value": 50
+		}]
+	},{
+		"race": "Ratman",
+		"BaseStats":[{
+			"stat": "LIFE",
+			"value": 50,
+			"valuePerLevel": 5
+		},{
+			"stat": "ATTACK",
+			"value": 10,
+			"valuePerLevel": 1
+		},{
+			"stat": "DEFENSE",
+			"value": 5,
+			"valuePerLevel": 0.5
+		},{
+			"stat": "SPEED",
+			"value": 10
+		}],
+		"EquipmentSlots":["TRINKET"]
+	},{
+		"race": "Spiderman",
+		"BaseStats":[{
+			"stat": "LIFE",
+			"value": 40,
+			"valuePerLevel": 5
+		},{
+			"stat": "MANA",
+			"value": 10,
+			"valuePerLevel": 1
+		},{
+			"stat": "ATTACK",
+			"value": 8,
+			"valuePerLevel": 1
+		},{
+			"stat": "MAGIC",
+			"value": 5,
+			"valuePerLevel": 1
+		},{
+			"stat": "DEFENSE",
+			"value": 4,
+			"valuePerLevel": 0.5
+		},{
+			"stat": "SPEED",
+			"value": 20
+		}],
+		"Skills":[{"classType":"SkillPoisonFangs"}],
+		"EquipmentSlots":["TRINKET"]
+	}
+	]
+}

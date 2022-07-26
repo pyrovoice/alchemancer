@@ -1,6 +1,7 @@
-import { Resource } from './resource';
+import { LootData } from './lootdata';
+
 export class PlayerResource{
-    resource!: Resource;
+    resource!: LootData;
     currentValue: number = 0;
     maxValue: number = 100;
 }

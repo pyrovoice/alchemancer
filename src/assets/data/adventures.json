@@ -1,0 +1,28 @@
+{
+	"AdventureData": [{
+		"UUID": "tutorial1",
+		"description": "You wake up. You feel a small entity dying nearby.",
+		"action": "Grab its Essence",
+		"actionReward":{
+			"lootRewards":[{"objectName": "Rat's Essence", "number":1}],
+			"unlockLocation": "Tutorial 1",
+			"unlockHeroRecipe": "rat"
+		},
+		"isUnlocked": true
+	},{
+		"UUID": "tutorial2",
+		"description": "With more essence, I can make something stronger.",
+		"action": "Scout for bodies",
+		"actionReward":{
+			"lootRewards":[{"objectName": "Rat's Essence", "number": 10}]
+		}
+	},{
+		"UUID": "tutorial3",
+		"description": "A dead spider. Too late to use its essence, but I can still use its body.",
+		"action": "Gather poison",
+		"actionReward":{
+			"lootRewards":[{"objectName": "Poison", "number": 5}]
+		}
+	}
+]
+}

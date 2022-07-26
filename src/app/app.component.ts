@@ -1,6 +1,4 @@
-import { PlayerResource } from './../model/player-resource';
 import { Reward } from './../model/reward';
-import { Resource } from './../model/resource';
 import { Exploration, ExplorationStatus } from './../model/exploration';
 import { Component, OnInit } from '@angular/core';
 import { PlayerInventory } from 'src/model/player-inventory';
@@ -22,7 +20,7 @@ export class AppComponent implements OnInit{
   playerInventory: PlayerInventory = new PlayerInventory();
 
   ngOnInit(): void {
-    this.explorations.push({id:"testLocked", name:"Locked", displayText:"I'm locked", status: ExplorationStatus.Unlocked, reward:{unlocksResources:[{resourceName:"testResource", nbr:100}], resources:[{resourceName:"testResource", nbr:5}]}})
+    this.explorations.push({id:"testLocked", name:"Locked", displayText:"I'm locked", status: ExplorationStatus.Unlocked, reward:{unlocksResources:[{resourceName:"Bone", nbr:100}], resources:[{resourceName:"Bone", nbr:5}]}})
     this.explorations.push({id:"testUnlocked", name:"Unlocked", displayText:"I'm Unlocked", status: ExplorationStatus.Unlocked, reward:{resources:[], unlocksResources:[]}})
   }
 
@@ -43,6 +41,12 @@ export class AppComponent implements OnInit{
   }
 
   manageReward(reward: Reward){
-    this.playerInventory.unlockResources(reward.unlocksResources);
+    console.log(reward)
+    reward.unlocksResources.forEach(e => {
+      this.playerInventory.unlockResource(e.resourceName);
+    });
+    reward.resources.forEach(e => {
+      this.playerInventory.addResource(e.resourceName, e.nbr);
+    });
   }
 }

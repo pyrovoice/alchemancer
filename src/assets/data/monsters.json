@@ -1,0 +1,104 @@
+{
+	"ennemiesDatas": [
+		{
+			"name": "zombie",
+			"hpMax": 500,
+			"hpPerLevel": 1,
+			"manaMax": 0,
+			"manaPerLevel": 0,
+			"attackBase": 10,
+			"attackPerLevel": 1,
+			"speed": 2,
+			"speedPerLevel": 0,
+			"loots": [
+				{
+					"name": "Undead's Essence",
+					"chance": 0.1,
+					"quantity": 1
+				}
+			]
+		},
+		{
+			"name": "squeleton",
+			"hpMax": 1000,
+			"hpPerLevel": 2,
+			"manaMax": 0,
+			"manaPerLevel": 0,
+			"attackBase": 20,
+			"attackPerLevel": 2,
+			"speed": 1.5,
+			"speedPerLevel": 0,
+			"loots": [
+				{
+					"name": "Undead's Essence",
+					"chance": 0.2,
+					"quantity": 1
+				}
+			]
+		},
+		{
+			"name": "rat",
+			"hpMax": 10,
+			"hpPerLevel": 0.5,
+			"manaMax": 0,
+			"manaPerLevel": 0,
+			"attackBase": 3,
+			"attackPerLevel": 0.5,
+			"speed": 50,
+			"speedPerLevel": 0,
+			"loots": [
+				{
+					"name": "Rat's Essence",
+					"chance": 1,
+					"quantity": 1
+				}
+			]
+		},
+		{
+			"name": "Apex rat",
+			"hpMax": 200,
+			"hpPerLevel": 10,
+			"manaMax": 0,
+			"manaPerLevel": 0,
+			"attackBase": 50,
+			"attackPerLevel": 3,
+			"speed": 1,
+			"speedPerLevel": 0,
+			"loots": [
+				{
+					"name": "Rat's Essence",
+					"chance": 1,
+					"quantity": 10
+				}
+			]
+		},
+		{
+			"name": "spider",
+			"hpMax": 10,
+			"hpPerLevel": 0.5,
+			"manaMax": 0,
+			"manaPerLevel": 0,
+			"attackBase": 5,
+			"attackPerLevel": 0.5,
+			"speed": 2,
+			"speedPerLevel": 0,
+			"stateAlterations": [
+				{
+					"type": "StateAlterationPoisonBasicAttack",
+					"baseValue": 1
+				}
+			],
+			"loots": [
+				{
+					"name": "poison",
+					"chance": 0.1
+				},
+				{
+					"name": "Spider's Essence",
+					"chance": 0.1,
+					"quantity": 1
+				}
+			]
+		}
+	]
+}

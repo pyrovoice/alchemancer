@@ -1,11 +1,13 @@
 import { ResourceReward } from './reward';
-import { Resource } from './resource';
 import { PlayerResource } from './player-resource';
+import { LootData } from './lootdata';
+import lootsFile from "src\\assets\\data\\loots.json";
+
 export class PlayerInventory{
     playerResources: PlayerResource[] = [];
 
-    addResource(r: Resource, nbr: number){
-        let foundResource = this.playerResources.find(e => e.resource.name == r.name);
+    addResource(r: string, nbr: number){
+        let foundResource = this.playerResources.find(e => e.resource.name == r);
         if(foundResource != undefined){
             foundResource.currentValue += nbr;
             if(foundResource.currentValue > foundResource.maxValue){
@@ -15,16 +17,19 @@ export class PlayerInventory{
     }
 
 
-    unlockResources(unlocksResources: ResourceReward[]) {
-        unlocksResources.forEach(rr => {
-            this.unlockResource(rr.resourceName)
+    unlockResources(unlocksResourcesNames: string[]) {
+        unlocksResourcesNames.forEach(rr => {
+            this.unlockResource(rr)
         });
       }
 
-    unlockResource(r: Resource, maxValInitial: number){
-        let foundResource = this.playerResources.find(e => e.resource.name == r.name);
+    unlockResource(r: string){
+        let foundResource = this.playerResources.find(e => e.resource.name == r);
         if(foundResource == undefined){
-            this.playerResources.push({resource:r, currentValue:0, maxValue:maxValInitial})
+            let loot = lootsFile.find(e => e.name == r);
+            if(loot != undefined){
+                this.playerResources.push({resource:loot, currentValue:0, maxValue:loot.defaultMaxValue})
+            }
         }
     }
 }
