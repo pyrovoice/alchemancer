@@ -8,7 +8,10 @@ import { Component, Input, OnInit } from '@angular/core';
 export class ProgressBarComponent implements OnInit {
   @Input() valueMax: number = 1;
   @Input() valueCurrent: number = 1;
-  @Input() color: string = "blue";
+  @Input() color: string = "black";
+  @Input() backgroundColor: string = "white";
+  @Input() displayText: boolean = true;
+  @Input() height: number = 20;
   constructor() { }
 
   ngOnInit(): void {

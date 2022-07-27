@@ -1,5 +1,6 @@
 <div style="border:1px solid black; margin-bottom:5px;">
     {{combatant.name}}
 
-    <app-progress-bar color="green" [valueCurrent]="combatant.lifeCurrent" [valueMax]="combatant.lifeMax"></app-progress-bar>
+    <app-progress-bar class="lifebar" color="green" [height]="20" [valueCurrent]="combatant.lifeCurrent" [valueMax]="combatant.lifeMax"></app-progress-bar>
+    <app-progress-bar class="delayBar"color="white" [height]="2" backgroundColor="black" [displayText]="false" [valueCurrent]="combatant.delaySinceLastAttack" [valueMax]="combatant.getDelayToAct()"></app-progress-bar>
 </div>

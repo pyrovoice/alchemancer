@@ -1,4 +1,4 @@
-<div id="progress">
-    <span id="percent">{{valueCurrent}}/{{valueMax}}</span>
-    <div id="bar" [style]="{'background-color': color, 'width':(valueCurrent/valueMax*100)+'%'}"></div>
+<div id="progress" [style]="{'background-color': backgroundColor}">
+    <span *ngIf="displayText" id="percent">{{valueCurrent}}/{{valueMax}}</span>
+    <div [style]="{'background-color': color, 'width':(valueCurrent/valueMax*100)+'%', 'height':height+'px'}"></div>
 </div>

@@ -2,26 +2,32 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.10.
 
-## Development server
+## Todo
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+- ~~ Working combat manager and basic combat rules ~~
+- Location and team manager with simple enter and exit combats
+- Finishing combat and getting rewards
+- Alchemy lab with new hero creation
+- Forge with new recipe creation
+- Character screen to see stats
+- Character screen: Equip and unequip
+- Basic abilities
+- Basic combat state (should be able to check for burn and burn damage)
+- Basic tutorial
+    - Explore to find first souls
+    - Craft a rat 
+    - Open location tab and start the first fight
+    - On win, close the location, remove rat from creation list, add Rat Soldier create a new exploration that awards multiple souls
+    - Craft Rat soldier
+    - Defeat second location
+    - New eploration with spider, get spider chitine
+    - Craft first equipment, equip it to character
+    - Defeat next location, unlocking next location with fire spirits
+    - Defeat enough to have N fire fragments, craft first skill (fireball) on the rat soldier
+    - Defeat the boss with the skill (they don't get damaged by normal attacks)
+    - Open up multiple locations, end of tutorial
+- Add unlock to basic tutorial somehow instead of showing all tabs at once
+- TODO first phase
+- Achievement system
+- Advanced states (can modify things that don't affect them directly, like boost all fire damage and burn damage)
+- 
