@@ -1,0 +1,6 @@
+
+<mat-button-toggle-group name="combatants"  [(ngModel)]="selectedCombatants" multiple>
+    <mat-button-toggle *ngFor="let c of playerCombatants.combatants" [value]="c">{{c.name}}</mat-button-toggle>
+</mat-button-toggle-group>
+
+<button (click)="startFight()">start Fight</button>
