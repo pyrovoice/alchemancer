@@ -1,6 +1,8 @@
+import { FightingLocation } from './../../../model/fighting-location';
 import { CharacterDetailComponent } from './../character-detail/character-detail.component';
 import { Component, ComponentFactoryResolver, Input, OnInit, TemplateRef, ViewChild, ViewContainerRef } from '@angular/core';
 import { Combat } from 'src/model/combat';
+import { FightingManager } from '../fighting-manager';
 
 @Component({
   selector: 'app-scene-fight',
@@ -10,12 +12,17 @@ import { Combat } from 'src/model/combat';
 export class SceneFightComponent implements OnInit {
   @ViewChild('ennemyTeam', {static: true, read: ViewContainerRef}) ennemyTeamContainer!: ViewContainerRef;
   @ViewChild('allyTeam', {static: true, read: ViewContainerRef}) allyTeamContainer!: ViewContainerRef;
-  @Input() combat!: Combat;
+  @Input() location!: FightingLocation;
+  combat!: Combat;
 
   constructor(private CFR: ComponentFactoryResolver) { }
 
   ngOnInit(): void {
-    if(this.combat != null){
+    if(this.location != null){
+      let c = FightingManager.getFightingManager().getCombatForLocation(this.location.name);
+      if(c != null){
+        this.combat = c;
+      }
       this.loadComponent();
     }
   }

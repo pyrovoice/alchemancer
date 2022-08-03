@@ -1,13 +1,14 @@
+import { FightingLocation } from './fighting-location';
 import { Combatant } from "src/model/combatant";
 
 export class Combat{
-    
+    location!: FightingLocation;
     playerTeam: Combatant[] = [];
     ennemyTeam: Combatant[] = [];
 
-    constructor(playerTeam: Combatant[], ennemyTeam: Combatant[]){
+    constructor(l: FightingLocation, playerTeam: Combatant[]){
+        this.location = l;
         this.playerTeam = playerTeam;
-        this.ennemyTeam = ennemyTeam;
     }
 
     updateCombat(deltaTime: number){
