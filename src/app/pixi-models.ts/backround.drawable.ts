@@ -1,7 +1,7 @@
 import { Drawable } from "./drawable";
 
-export class Background extends Drawable {
-    private space = 20;
+export class DBackground extends Drawable {
+    private space = 50;
     constructor() {
       super();
   

@@ -1,5 +1,6 @@
 export class Combatant {
     name:string = "PLACEHOLDER";
+    sprite: string = "default";
     lifeMax: number = 0;
     lifeCurrent = this.lifeMax;
     attackBase: number = 0;
