@@ -5,6 +5,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 ## Todo
 
 - ~~ Working combat manager and basic combat rules ~~
+- Pixi.js combat PoC with http://free-tex-packer.com/download/ and https://www.codeandweb.com/texturepacker/tutorials/how-to-create-sprite-sheets-and-animations-with-pixijs5
 - Location and team manager with simple enter and exit combats
 - Finishing combat and getting rewards
 - Alchemy lab with new hero creation
