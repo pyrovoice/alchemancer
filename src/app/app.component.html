@@ -1,4 +1,5 @@
-<app-scene-fight *ngIf="currentScene == Scene.Fight" [location]="locationToDisplay"></app-scene-fight>
+<!-- <app-scene-fight *ngIf="currentScene == Scene.Fight" [location]="locationToDisplay"></app-scene-fight> -->
+<app-scene-fight-test *ngIf="currentScene == Scene.Fight"></app-scene-fight-test>
 <app-scene-exploration [explorations]="explorations" (explorationEmitter)="resolveExploration($event)" *ngIf="currentScene == Scene.Exploration"></app-scene-exploration>
 <app-scene-inventory *ngIf="currentScene == Scene.Inventory" [inventory]="playerInventory"></app-scene-inventory>
 <app-location-selection *ngIf="currentScene == Scene.FightLocationSelection" [locations]="locations" (fightingLocationEmitter)="resolveFightingLocationSelection($event)"></app-location-selection>

@@ -12,6 +12,7 @@ import { LocationTeamSelectionComponent } from './fighting/location-team-selecti
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
+import { SceneFightTestComponent } from './fighting/scene-fight-test/scene-fight-test.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { FormsModule } from '@angular/forms';
     SceneExplorationComponent,
     SceneInventoryComponent,
     LocationSelectionComponent,
-    LocationTeamSelectionComponent
+    LocationTeamSelectionComponent,
+    SceneFightTestComponent
   ],
   imports: [
     BrowserModule,
