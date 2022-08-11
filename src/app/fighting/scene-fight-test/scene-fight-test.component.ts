@@ -3,6 +3,7 @@ import { AfterViewInit, Component, ElementRef, OnInit, Renderer2, ViewChild } fr
 import * as PIXI from 'pixi.js';
 import { DBackground } from 'src/app/pixi-models.ts/backround.drawable';
 import { Graphics } from 'pixi.js';
+import { interval } from 'rxjs';
 
 @Component({
   selector: 'app-scene-fight-test',
@@ -16,7 +17,8 @@ export class SceneFightTestComponent implements AfterViewInit {
 
 
   constructor() {
-
+    const source = interval(1000);
+    source.subscribe(val => this.attackAnimation());
   }
 
   initActors() {
@@ -25,17 +27,30 @@ export class SceneFightTestComponent implements AfterViewInit {
   }
 
   ngAfterViewInit() {
-    var renderer = PIXI.autoDetectRenderer();
-    this.canvas.nativeElement.appendChild(renderer.view);
-    renderer.resize(this.canvas.nativeElement.offsetHeight, this.canvas.nativeElement.offsetWidth);
-    renderer.backgroundColor = 0xFFFFFF;
-    renderer.clearBeforeRender = true;
+    this.renderer = PIXI.autoDetectRenderer();
+    this.canvas.nativeElement.appendChild(this.renderer.view);
+    this.renderer.resize(this.canvas.nativeElement.offsetHeight, this.canvas.nativeElement.offsetWidth);
+    this.renderer.backgroundColor = 0xFFFFFF;
+    this.renderer.clearBeforeRender = true;
     let t = PIXI.Texture.from('assets/img/hero.png');
+    PIXI.Loader.shared.add("assets/img/attacks.json")
+
     t.on('update', () => {
       //Create a container object called the `stage` and render it...
       this.initActors();
-      renderer.render(this.stage);
+      this.renderer.render(this.stage);
     });
+  }
 
+  attackAnimation(){
+    console.log("attack")
+    let sheet = PIXI.Loader.shared.resources["assets/animation/attacks.json"].spritesheet;
+    console.log(sheet)
+    let animatedSprite = new PIXI.AnimatedSprite(sheet.animations["attacks/attack1/"]);
+    // set speed, start playback and add it to the stage
+    animatedSprite.animationSpeed = 0.167; 
+    animatedSprite.play();
+    this.stage.addChild(animatedSprite);
+    this.renderer.render(this.stage);
   }
 }
