@@ -1,0 +1,42 @@
+{"frames": {
+
+"attack1_01.png":
+{
+	"frame": {"x":0,"y":0,"w":124,"h":150},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":124,"h":150},
+	"sourceSize": {"w":124,"h":150},
+	"anchor": {"x":0.5,"y":0.5}
+},
+"attack1_02.png":
+{
+	"frame": {"x":0,"y":150,"w":124,"h":150},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":124,"h":150},
+	"sourceSize": {"w":124,"h":150},
+	"anchor": {"x":0.5,"y":0.5}
+},
+"attack1_03.png":
+{
+	"frame": {"x":0,"y":300,"w":124,"h":150},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":124,"h":150},
+	"sourceSize": {"w":124,"h":150},
+	"anchor": {"x":0.5,"y":0.5}
+}},
+"animations": {
+	"attack1": ["attack1_01.png","attack1_02.png","attack1_03.png"]
+},
+"meta": {
+	"app": "https://www.codeandweb.com/texturepacker",
+	"version": "1.0",
+	"image": "attack.png",
+	"format": "RGBA8888",
+	"size": {"w":124,"h":450},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:63b741f3788ee57673ebd4ed24263f9f:6273cec99c87913aa3f143bf4818a5da:c558c2d9773adf0f4ef6f0e9687f205f$"
+}
+}

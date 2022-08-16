@@ -10,20 +10,26 @@ import { interval } from 'rxjs';
   templateUrl: './scene-fight-test.component.html',
   styleUrls: ['./scene-fight-test.component.scss']
 })
-export class SceneFightTestComponent implements AfterViewInit {
+export class SceneFightTestComponent implements AfterViewInit, OnInit {
   private stage = new PIXI.Container();
   private renderer = PIXI.autoDetectRenderer();
   @ViewChild('convasContainer') canvas: ElementRef;
-
+  sheet;
+  loading = true;
 
   constructor() {
-    const source = interval(1000);
-    source.subscribe(val => this.attackAnimation());
+  }
+  ngOnInit(): void {
   }
 
   initActors() {
     this.stage.addChild(new DBackground());
     this.stage.addChild(new DCombattant());
+    let animatedSprite = new PIXI.AnimatedSprite(this.sheet.animations["attack1"]);
+    // set speed, start playback and add it to the stage
+    animatedSprite.animationSpeed = 0.167; 
+    animatedSprite.play();
+    this.stage.addChild(animatedSprite);
   }
 
   ngAfterViewInit() {
@@ -32,25 +38,28 @@ export class SceneFightTestComponent implements AfterViewInit {
     this.renderer.resize(this.canvas.nativeElement.offsetHeight, this.canvas.nativeElement.offsetWidth);
     this.renderer.backgroundColor = 0xFFFFFF;
     this.renderer.clearBeforeRender = true;
-    let t = PIXI.Texture.from('assets/img/hero.png');
-    PIXI.Loader.shared.add("assets/img/attacks.json")
+    // let t = PIXI.Texture.from('assets/img/hero.png');
+    // t.on('update', () => {
+    //   //Create a container object called the `stage` and render it...
+    //   this.initActors();
+      
+    // });
 
-    t.on('update', () => {
-      //Create a container object called the `stage` and render it...
-      this.initActors();
-      this.renderer.render(this.stage);
-    });
+    PIXI.Loader.shared.add("assets/animation/attack.json").load(v => {
+      this.sheet = PIXI.Loader.shared.resources["assets/animation/attack.json"].spritesheet
+      this.playAnimation()
+    });  
   }
 
-  attackAnimation(){
-    console.log("attack")
-    let sheet = PIXI.Loader.shared.resources["assets/animation/attacks.json"].spritesheet;
-    console.log(sheet)
-    let animatedSprite = new PIXI.AnimatedSprite(sheet.animations["attacks/attack1/"]);
+  playAnimation(){
+    this.stage.addChild(new DBackground());
+    let animatedSprite = new PIXI.AnimatedSprite(this.sheet.animations["attack1"]);
     // set speed, start playback and add it to the stage
-    animatedSprite.animationSpeed = 0.167; 
-    animatedSprite.play();
+    animatedSprite.animationSpeed = 1; 
+    animatedSprite.position.set(100, 100);
+    console.log(animatedSprite)
     this.stage.addChild(animatedSprite);
     this.renderer.render(this.stage);
+    animatedSprite.play();
   }
 }
